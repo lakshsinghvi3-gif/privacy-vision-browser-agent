@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Privacy Vision Browser Agent",
+  "version": "0.1.0",
+  "description": "Captures the active tab, extracts privacy-safe DOM structure, locally redacts sensitive regions, and executes validated browser actions.",
+  "permissions": ["activeTab", "scripting", "tabs", "offscreen"],
+  "host_permissions": ["http://localhost:8000/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "capture-page-context": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Capture privacy-safe page context"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+body {
+  width: 340px;
+  margin: 0;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+h3 { margin-top: 0; }
+
+button {
+  width: 100%;
+  margin: 5px 0;
+  padding: 9px;
+  cursor: pointer;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 350px;
+  overflow: auto;
+  background: #f4f4f4;
+  padding: 10px;
+  font-size: 11px;
+}

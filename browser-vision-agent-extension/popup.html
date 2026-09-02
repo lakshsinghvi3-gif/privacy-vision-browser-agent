@@ -1,15 +1,46 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Vision Agent</title>
-  <link rel="stylesheet" href="popup.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h3>Privacy Vision Agent</h3>
-  <button id="capture">Capture Context</button>
-  <button id="run">Run Agent</button>
-  <pre id="output">Ready.</pre>
+  <div class="card">
+    <div class="header">
+      <span class="icon">🛡️</span>
+      <h2>Privacy Vision Agent</h2>
+    </div>
+    <p class="subtitle">Sanitize webpage data locally before sharing with AI.</p>
+
+    <!-- SINGLE PRIMARY BUTTON -->
+    <button id="protectBtn" class="primary-btn">
+      <span class="btn-sparkle">✨</span> PROTECT THIS PAGE
+    </button>
+
+    <!-- PROCESSING STATE -->
+    <div id="statusContainer" class="status-container hidden">
+      <div class="spinner"></div>
+      <span id="statusText">Extracting DOM & Capture...</span>
+    </div>
+
+    <!-- PREVIEW RESULT STATE -->
+    <div id="resultContainer" class="result-container hidden">
+      <div class="badge success">Sanitized & Safe</div>
+      <div class="image-wrapper">
+        <img id="sanitizedPreview" alt="Sanitized Page Preview" />
+      </div>
+    </div>
+
+    <!-- ERROR STATE -->
+    <div id="errorContainer" class="error-container hidden">
+      <div class="badge error">Processing Failed</div>
+      <p id="errorMsg" class="error-text"></p>
+    </div>
+
+    <div class="footer">
+      <span class="status-dot green"></span> System Ready (127.0.0.1:8000)
+    </div>
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>
